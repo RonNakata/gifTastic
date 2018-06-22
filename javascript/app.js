@@ -15,16 +15,19 @@ function displayAnimalGif() {
       url: queryURL,
       method: "GET"
     }).then(function(response) {
+    
 
         // loop to process the 10 animals returned
-        for (var i=0; i<11; i++) {
+        for (var i = 0; i < 10; i++) {
 
             // new div to hold result
             var newDiv=$('<div>');
             newDiv.attr({
                 class: "gifbox"});
             // grab rating
-            var xrating=("<p>Rating: " + response.data[i].rating + "</p>");
+
+            var rating=(`<p>Rating: ${ response.data[i].rating} </p>`);
+          
             // grab image urls
             var imgurlS=response.data[i].images["original_still"].url;  
             var imgurlA=response.data[i].images["original"].url;  
@@ -39,7 +42,7 @@ function displayAnimalGif() {
             // add data-name value, the - made it not happ if I tried to do it together with the above
             image.attr("data-name", i);
             // put rating and image in newdiv
-            newDiv.append(xrating,image);
+            newDiv.append(rating,image);
             // display the new div on the page
             $('.gifshere').append(newDiv);
 
