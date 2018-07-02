@@ -6,7 +6,7 @@ function displayAnimalGif() {
 
     var animal = $(this).attr("data-name");
     var key = "oYRWNoXKStn5LsjCA7Xs1cP3jxlbbU99"
-    var queryURL = " http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=" + key + "&limit=10";
+    var queryURL = " https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=" + key + "&limit=10";
 
     $(".gifshere").empty(); 
 
